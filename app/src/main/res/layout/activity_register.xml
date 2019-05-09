@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+    <EditText
+        android:id="@+id/et_register_account"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/et"
+        android:hint="@string/account"
+        android:drawableLeft="@drawable/ic_account"
+        android:inputType="number"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textSize="@dimen/bigTextSize" />
+
+    <EditText
+        android:layout_below="@+id/et_register_account"
+        android:id="@+id/et_register_password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/et"
+        android:hint="@string/password"
+        android:drawableLeft="@drawable/ic_password"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textSize="@dimen/bigTextSize"
+        android:inputType="text"/>
+
+    <Button
+        android:layout_below="@+id/et_register_password"
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn"
+        android:text="@string/register"/>
+
+</RelativeLayout>
+</LinearLayout>

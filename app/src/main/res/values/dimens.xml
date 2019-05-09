@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="textSize">20sp</dimen>
+    <dimen name="bigTextSize">30sp</dimen>
+</resources>

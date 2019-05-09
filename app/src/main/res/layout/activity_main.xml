@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+        <EditText
+            android:id="@+id/et_account"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/et"
+            android:hint="账号"
+            android:drawableLeft="@drawable/ic_account"
+            android:inputType="number"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textSize="@dimen/bigTextSize" />
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/et_account"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/et"
+            android:hint="@string/password"
+            android:drawableLeft="@drawable/ic_password"
+            android:inputType="textPassword"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textSize="@dimen/bigTextSize" />
+
+        <LinearLayout
+            android:id="@+id/ll_check"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_password"
+            android:layout_marginTop="10dp">
+
+            <CheckBox
+                android:id="@+id/cb_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/saveAccount"
+                android:textSize="@dimen/textSize"
+                android:checked="true"
+                />
+
+            <CheckBox
+                android:id="@+id/cb_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/savePassword"
+                android:textSize="@dimen/textSize"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_check"
+            android:layout_marginTop="20dp"
+            android:text="@string/createAccount"
+            android:textSize="@dimen/textSize"
+            android:textColor="@color/colorBlue"/>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_register"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/btn"
+            android:text="@string/login" />
+    </RelativeLayout>
+
+</RelativeLayout>
