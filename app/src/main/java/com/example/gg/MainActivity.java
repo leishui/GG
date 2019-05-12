@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         return new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = null;
+                    Intent intent;
                     switch (v.getId()) {
                         case R.id.tv_register:
                             intent = new Intent(MainActivity.this, RegisterActivity.class);
@@ -67,19 +67,21 @@ public class MainActivity extends AppCompatActivity {
                             String password = mEtPassword.getText().toString();
                             DatebaseHelper datebaseHelper = new DatebaseHelper(MainActivity.this, "text_db", null, 1);
                             SQLiteDatabase db = datebaseHelper.getWritableDatabase();
-                            @SuppressLint("Recycle") Cursor cursor = db.rawQuery("select * from user where account=" + account,null);
-                            if (cursor.moveToNext()){
-                                cursor.moveToFirst();
-                                String passwordInBd = cursor.getString(cursor.getColumnIndex("password"));
-                                if (passwordInBd.equals(password)){
-                                    makeLongToast("登录成功");
-                                    intent = new Intent(MainActivity.this,SuccessActivity.class);
-                                    startActivity(intent);
+                            if (!account.equals("")){
+                                @SuppressLint("Recycle") Cursor cursor = db.rawQuery("select * from user where account=" + account,null);
+                                if (cursor.moveToNext()){
+                                    cursor.moveToFirst();
+                                    String passwordInBd = cursor.getString(cursor.getColumnIndex("password"));
+                                    if (passwordInBd.equals(password)){
+                                        makeLongToast("登录成功");
+                                        intent = new Intent(MainActivity.this,SuccessActivity.class);
+                                        startActivity(intent);
+                                    }else {
+                                        makeLongToast("密码错误");
+                                    }
                                 }else {
-                                    makeLongToast("密码错误");
+                                    makeLongToast("账号不存在");
                                 }
-                            }else {
-                                makeLongToast("账号不存在");
                             }
                             break;
                         default:
